@@ -188,11 +188,7 @@ public class Main {
         (на два влево) -> [ 6, 1, 3, 5 ]. При каком n в какую сторону сдвиг можете выбирать сами.
      */
     private static void arrayValueChangePos(int[] array, int n) {
-        println("- Task 7 -");
-
-        int pos = 0;
-
-        println("Array: " + arrayToString(array));
+        println("- Task 7 -\nArray: " + arrayToString(array));
 
         for (int i = 0; i < n; i++) {
             int firstNumber = array[0];
