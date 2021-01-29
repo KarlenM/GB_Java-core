@@ -10,12 +10,17 @@ public class Main {
     static final int GUESS_NUMBER_ATTEMPTS = 3;
     static final int GUESS_NUMBER_MAX_VALUE = 9;
 
+    private static Scanner scanner = new Scanner(System.in);
+    private static Random random = new Random();
+
     public static void main(String[] args) {
         // Task 1
         guessTheNumber();
 
         // Task 2
         guessTheWord();
+
+        scanner.close();
     }
 
     /*
@@ -26,12 +31,8 @@ public class Main {
         «Повторить игру еще раз? 1 – да / 0 – нет»(1 – повторить, 0 – нет).
     */
     public static void guessTheNumber() {
-        int attempts = GUESS_NUMBER_ATTEMPTS;
-
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-
-        int guessNumber = random.nextInt(GUESS_NUMBER_MAX_VALUE);
+        int attempts = GUESS_NUMBER_ATTEMPTS,
+            guessNumber = random.nextInt(GUESS_NUMBER_MAX_VALUE);
 
         do {
             String userText = attempts == GUESS_NUMBER_ATTEMPTS
@@ -84,9 +85,6 @@ public class Main {
         позиции Играем до тех пор, пока игрок не отгадает слово. Используем только маленькие буквы.
     */
     public static void guessTheWord() {
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-
         int attempts = 0;
 
         String[] words = {
@@ -128,7 +126,7 @@ public class Main {
             }
 
             attempts++;
-        } while(!guessedWord.equals(enteredWord));
+        } while(true);
     }
 
     private static String guessedLetters(String guessedWord, String enteredWord) {
