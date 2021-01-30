@@ -30,7 +30,7 @@ public class Main {
 
         // Task 7
         int[] valueChangeArray = {1, 2, 3, 4, 5, 6, 7, 8};
-        arrayValueChangePos(valueChangeArray, 2);
+        arrayValueChangePos(valueChangeArray, -2);
     }
 
     /*
@@ -121,6 +121,12 @@ public class Main {
     */
     private static void findMinMax() {
         int[] array = {4, 5, 3, 6, 9, 10, 2, 1, 7, 8};
+
+        if(array.length == 0) {
+            print2ln("Empty array!");
+            return;
+        }
+
         int min = array[0], max = array[0];
 
         for (int a : array) {
@@ -144,7 +150,7 @@ public class Main {
         checkBalance([1, 1, 1, || 2, 1]) → true, граница показана символами ||,
         эти символы в массив не входят.
     */
-    private static void checkBalance(int[] array) {
+    private static boolean checkBalance(int[] array) {
         int leftSide = 0;
         boolean found = false;
         String str = "[ ";
@@ -177,6 +183,8 @@ public class Main {
         print2ln("- Task 6 -\n" +
                  "Array: " + arrayToString(array) + "\n" +
                  "Equals sides: " + str);
+
+        return found;
     }
 
     /*
@@ -190,18 +198,35 @@ public class Main {
     private static void arrayValueChangePos(int[] array, int n) {
         println("- Task 7 -\nArray: " + arrayToString(array));
 
-        for (int i = 0; i < n; i++) {
-            int firstNumber = array[0];
+        String direction = "left";
 
-            for (int j = 0; j < array.length; j++) {
-                if(j + 1 < array.length)
-                    array[j] = array[j + 1];
-            }
-
-            array[array.length - 1] = firstNumber;
+        if(n < 0) {
+            direction = "right";
+            n = n * -1;
         }
 
-        println("Shift " + n + " to the left: " + arrayToString(array));
+        for (int i = 0; i < n; i++) {
+            int firstNumber = array[0];
+            int lastNumber = array[array.length - 1];
+
+            if(direction.equals("left")) {
+                for (int j = 0; j < array.length; j++) {
+                    array[j] = j + 1 < array.length
+                            ? array[j] = array[j + 1]
+                            : firstNumber;
+                }
+            }
+
+            else if(direction.equals("right")) {
+                for (int j = array.length - 1; j >= 0; j--) {
+                    array[j] = j > 0
+                            ? array[j - 1]
+                            : lastNumber;
+                }
+            }
+        }
+
+        println("Shift " + n + " to the " + direction + ": " + arrayToString(array));
     }
 
     private static void print(String str) {
