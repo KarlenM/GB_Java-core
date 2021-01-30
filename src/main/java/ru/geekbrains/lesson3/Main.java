@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class Main {
     static final int GUESS_NUMBER_ATTEMPTS = 3;
-    static final int GUESS_NUMBER_MAX_VALUE = 9;
+    static final int GUESS_NUMBER_MAX_VALUE = 10;
 
     private static Scanner scanner = new Scanner(System.in);
     private static Random random = new Random();
