@@ -9,15 +9,17 @@ public class Employee {
     protected String fio;
     protected String position;
     protected String email;
+    protected String phone;
     protected int salary;
     protected int age;
 
 
     // 2. Конструктор класса должен заполнять эти поля при создании объекта.
-    public Employee(String fio, String position, String email, int salary, int age) {
+    public Employee(String fio, String position, String email, String phone, int salary, int age) {
         this.fio = fio;
         this.position = position;
         this.email = email;
+        this.phone = phone;
         this.salary = salary;
         this.age = age;
 
@@ -31,6 +33,7 @@ public class Employee {
             "ФИО: " + this.fio + "\n" +
             "Должность: " + this.position + "\n" +
             "Email: " + this.email +
+            "Телефон: " + this.phone +
             "Зарплата: " + this.salary + "\n" +
             "Возраст: " + this.age + "\n"
         );

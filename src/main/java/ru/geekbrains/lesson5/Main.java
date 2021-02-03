@@ -24,6 +24,7 @@ public class Main {
                 "Иванов Иван Иванович",
                 "директор",
                 "ivan@ivanovich.ru",
+                "+7 (999) 777-77-77",
                 2000, 50
         );
 
@@ -31,6 +32,7 @@ public class Main {
                 "Смирнов Павел Павлович",
                 "менджер",
                 "pavel@smirnov.ru",
+                "+7 (999) 377-77-77",
                 1000,
                 35
         );
@@ -39,6 +41,7 @@ public class Main {
                 "Кузнецов Андрей Андреевич ",
                 "инспектор",
                 "andrei@kyznetsov.ru",
+                "+7 (999) 277-77-77",
                 500,
                 42
         );
@@ -47,6 +50,7 @@ public class Main {
                 "Попов Сергей Сергеевич",
                 "аналитик",
                 "sergei@popov.ru",
+                "+7 (999) 777-77-78",
                 500,
                 25
         );
@@ -55,6 +59,7 @@ public class Main {
                 "Васильев Василий Васильевич",
                 "программист",
                 "vasilievich@vadiliev.ru",
+                "+7 (999) 777-77-79",
                 500,
                 23
         );
@@ -70,7 +75,8 @@ public class Main {
                 System.out.println(
                         "ФИО: " + employee.fio + "\n" +
                                 "Должность: " + employee.position + "\n" +
-                                "Email: " + employee + "\n" +
+                                "Email: " + employee.email + "\n" +
+                                "Телефон: " + employee.phone + "\n" +
                                 "Зарплата: " + employee.salary + "\n" +
                                 "Возраст: " + employee.age + "\n"
                 );
