@@ -6,12 +6,12 @@ package ru.geekbrains.lesson5;
     телефон, зарплата, возраст.
  */
 public class Employee {
-    protected String fio;
-    protected String position;
-    protected String email;
-    protected String phone;
-    protected int salary;
-    protected int age;
+    private String fio;
+    private String position;
+    private String email;
+    private String phone;
+    private int salary;
+    private int age;
 
 
     // 2. Конструктор класса должен заполнять эти поля при создании объекта.
@@ -29,13 +29,16 @@ public class Employee {
     // 3. Внутри класса «Сотрудник» написать метод, который выводит информацию об объекте в консоль.
     public void getObjectInfo() {
         System.out.println(
-            "- Информация об объекте -\n" +
             "ФИО: " + this.fio + "\n" +
             "Должность: " + this.position + "\n" +
-            "Email: " + this.email +
-            "Телефон: " + this.phone +
+            "Email: " + this.email + "\n" +
+            "Телефон: " + this.phone + "\n" +
             "Зарплата: " + this.salary + "\n" +
             "Возраст: " + this.age + "\n"
         );
+    }
+
+    public int getAge() {
+        return this.age;
     }
 }

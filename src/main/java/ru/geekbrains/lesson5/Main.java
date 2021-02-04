@@ -71,15 +71,8 @@ public class Main {
         System.out.println("\n- Ввод сотрудников старше " + age + " лет -\n");
 
         for (Employee employee : employees) {
-            if(employee.age >= 40) {
-                System.out.println(
-                        "ФИО: " + employee.fio + "\n" +
-                                "Должность: " + employee.position + "\n" +
-                                "Email: " + employee.email + "\n" +
-                                "Телефон: " + employee.phone + "\n" +
-                                "Зарплата: " + employee.salary + "\n" +
-                                "Возраст: " + employee.age + "\n"
-                );
+            if(employee.getAge() >= 40) {
+                employee.getObjectInfo();
             }
         }
     }
