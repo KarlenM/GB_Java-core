@@ -16,3 +16,4 @@
 *.iml
 *.idea
 /src/main/java/ru/geekbrains/lesson8/hw1/
+/src/main/java/ru/geekbrains/lesson4/TicTacToe.java
