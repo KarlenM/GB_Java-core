@@ -16,13 +16,13 @@ public class Librarians {
     }
 
     private void checkNoise(LibraryRooms libraryRooms) {
-        if(libraryRooms.isNoisyInRoom()) {
+        if (libraryRooms.isNoisyInRoom()) {
             String result = angry
                     ? "Silence in the hall!!!"
                     : "Please, let's be quiet";
 
             System.out.println(
-                Colorize.make("error", result)
+                    Colorize.make("error", result)
             );
         }
     }

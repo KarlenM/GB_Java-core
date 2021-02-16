@@ -74,7 +74,7 @@ public class BookArchive {
     };
 
     public BookArchive(int quantity) {
-        if(quantity > booksList.length)
+        if (quantity > booksList.length)
             quantity = booksList.length;
 
         this.quantity = quantity;
@@ -97,13 +97,11 @@ public class BookArchive {
     }
 
     public void giveBook(LibraryRooms libraryRoom, Visitors visitor) {
-        if(isVisitorInLibraryRoom(libraryRoom, visitor)) {
+        if (isVisitorInLibraryRoom(libraryRoom, visitor)) {
             Random random = new Random();
 
             visitor.takeBook(books[random.nextInt(books.length)]);
-        }
-
-        else {
+        } else {
             System.out.println(
                     Colorize.make(
                             "error",

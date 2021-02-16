@@ -13,10 +13,10 @@ public class Visitors {
     }
 
     public int getNoiseVolume() {
-        if(noiseType.equals("noisy"))
+        if (noiseType.equals("noisy"))
             return 2;
 
-        else if(noiseType.equals("usual"))
+        else if (noiseType.equals("usual"))
             return 1;
 
         return 0;
@@ -27,7 +27,7 @@ public class Visitors {
     }
 
     public void takeBook(Books book) {
-        if(isBookAlreadyTaken())
+        if (isBookAlreadyTaken())
             System.out.println(
                     Colorize.make(
                             "error",

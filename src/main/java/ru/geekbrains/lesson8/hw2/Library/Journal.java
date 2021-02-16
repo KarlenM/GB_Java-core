@@ -15,20 +15,16 @@ public class Journal {
         if (isVisitorAlreadySign(visitor)) {
             System.out.println(Colorize.make(
                     "error",
-                    "Visitor " + visitor.getVisitorName() +  " already sign")
+                    "Visitor " + visitor.getVisitorName() + " already sign")
             );
-        }
-
-        else if(isNotEnoughPlaces()) {
+        } else if (isNotEnoughPlaces()) {
             System.out.println(
                     Colorize.make(
                             "error",
-                            "Sorry " + visitor.getVisitorName() +  ", no seats available"
+                            "Sorry " + visitor.getVisitorName() + ", no seats available"
                     )
             );
-        }
-
-        else addVisitor(libraryRoom, visitor);
+        } else addVisitor(libraryRoom, visitor);
     }
 
     public void addVisitor(LibraryRooms libraryRoom, Visitors visitor) {
@@ -38,9 +34,9 @@ public class Journal {
 
         System.out.println(
                 Colorize.make(
-                    "ok",
-                    "Have a seat please " + visitor.getVisitorName()
-                ) + " in Library: " + libraryRoom.getRoomName() +  "."
+                        "ok",
+                        "Have a seat please " + visitor.getVisitorName()
+                ) + " in Library: " + libraryRoom.getRoomName() + "."
         );
     }
 
@@ -50,13 +46,13 @@ public class Journal {
 
         System.out.println(Colorize.make(
                 "ok",
-                "Bye bye " + visitor.getVisitorName() +  ".")
+                "Bye bye " + visitor.getVisitorName() + ".")
         );
     }
 
     public boolean isVisitorAlreadySign(Visitors signVisitor) {
-        for(Visitors visitor : this.visitors)
-            if(visitor == signVisitor)
+        for (Visitors visitor : this.visitors)
+            if (visitor == signVisitor)
                 return true;
 
         return false;
@@ -67,7 +63,7 @@ public class Journal {
     }
 
     public void removeVisitorFromList(Visitors visitor) {
-        for(Visitors signVisitor : this.visitors) {
+        for (Visitors signVisitor : this.visitors) {
             if (visitor == signVisitor) {
                 visitor = null;
 

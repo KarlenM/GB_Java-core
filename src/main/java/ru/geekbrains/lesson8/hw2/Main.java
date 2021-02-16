@@ -26,7 +26,7 @@ public class Main {
     public static void main(String[] args) {
         LibraryRooms[] libraryRooms = new LibraryRooms[2];
         libraryRooms[0] = new LibraryRooms("Load room", 10, 10);
-        libraryRooms[1] = new LibraryRooms("Quite room", 2,3);
+        libraryRooms[1] = new LibraryRooms("Quite room", 2, 3);
 
         Librarians[] librarians = new Librarians[2];
         librarians[0] = new Librarians(true);
