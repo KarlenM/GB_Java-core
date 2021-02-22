@@ -6,14 +6,13 @@ public class PhoneBook {
     private final Map<String, ArrayList<String>> phoneBook = new HashMap<>();
 
     public void add(String familyName, String phone) {
-        if (phoneBook.get(familyName) == null) {
-            ArrayList<String> phones = new ArrayList<>();
-            phones.add(phone);
+        phoneBook.merge(familyName, new ArrayList<>(Collections.singletonList(phone)),
+                (oldPhones, newPhones) -> {
 
-            phoneBook.put(familyName, phones);
-        } else {
-            phoneBook.get(familyName).add(phone);
-        }
+                oldPhones.addAll(newPhones);
+                return oldPhones;
+            }
+        );
     }
 
     public void get(String familyName) {
