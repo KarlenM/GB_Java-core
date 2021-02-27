@@ -49,7 +49,7 @@ public class Main {
         Fruit apple = new Apple();
         Fruit orange = new Orange();
 
-        List<Box<Object>> boxes = new ArrayList<>();
+        List<Box<Fruit>> boxes = new ArrayList<>();
         boxes.add(new Box<>());
         boxes.add(new Box<>());
         boxes.add(new Box<>());

@@ -1,11 +1,13 @@
 package ru.geekbrains.lesson11.task3.boxes;
 
+import ru.geekbrains.lesson11.task3.fruits.Fruit;
+
 import java.util.ArrayList;
 
-public class Box<Fruit> {
-    private final ArrayList<Fruit> box = new ArrayList<>();
+public class Box<T extends Fruit> {
+    private final ArrayList<T> box = new ArrayList<>();
 
-    public void add(Fruit fruit) {
+    public void add(T fruit) {
         String result;
 
         if (isRightFruit(fruit)) {
@@ -33,7 +35,7 @@ public class Box<Fruit> {
         float weight = 0.0f;
 
         for (Fruit fruit : box) {
-            weight += ((ru.geekbrains.lesson11.task3.fruits.Fruit) fruit).getWeight();
+            weight += fruit.getWeight();
         }
 
         return weight;
@@ -43,12 +45,12 @@ public class Box<Fruit> {
         return this.box.size();
     }
 
-    public boolean compare(Box<Fruit> box) {
+    public boolean compare(Box<T> box) {
         return getWeight() == box.getWeight();
     }
 
-    public void shiftFruitsToAnotherBox(Box<Fruit> box) {
-        for (Fruit fruit : this.box) {
+    public void shiftFruitsToAnotherBox(Box<T> box) {
+        for (T fruit : this.box) {
             if(!box.isRightFruit(fruit)) {
                 System.out.println("This box for another fruits");
 
